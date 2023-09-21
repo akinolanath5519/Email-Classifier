@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Classifier</title>
+   <style>
+   /* Reset some default styles */
+body, h1, p, form, textarea, input {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Header styling */
+h1 {
+    font-size: 36px;
+    background-color: #0074e4; /* Updated header color */
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Form styling */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #0074e4; /* Updated button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Result styling */
+p {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Updated result color */
+    color: white;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+    form {
+        padding: 10px;
+    }
+}
+
+
+   </style>
+</head>
+<body>
+    <h1>Email Classifier</h1>
+    <form method="POST">
+        <textarea name="message" rows="4" cols="50" placeholder="Enter your email message"></textarea>
+        <br>
+        <input type="submit" value="Classify">
+    </form>
+    <br>
+    {% if result %}
+    <p>Classification Result: {{ result }}</p>
+    {% endif %}
+ <footer>
+        <p>Developed and created by Nathaniel</p>
+    </footer>
+</body>
+</html>
